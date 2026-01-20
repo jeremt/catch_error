@@ -2,6 +2,8 @@
 
 A tiny helper inspired by Rust's `Result` type that turns thrown errors into values you can branch on — concise control flow, zero ceremony.
 
+![](./thumbnail.png)
+
 ## Why use this
 
 - Avoid try/catch weird control flow
@@ -49,7 +51,7 @@ Async example:
 ```ts
 import {catch_error} from "./catch_error";
 
-const valueOrErr = await catch_error(fetch("/api/data").then((r) => r.json()));
+const valueOrErr = await catch_error(fetch_data());
 if (valueOrErr instanceof Error) {
     // handle error
     console.error("fetch failed", valueOrErr);
